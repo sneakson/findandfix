@@ -13,6 +13,7 @@ export class BuginfoComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.bugInfoForm = this.formBuilder.group({
       name: '',
+      email: '',
       summary: '',
       application: '',
       description: ''
@@ -22,7 +23,10 @@ export class BuginfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit() {
-    console.log(this.bugInfoForm);
+  submit(bugInfo: FormGroup) {
+    console.log(bugInfo);
+    window.alert(`Thank you ${bugInfo.name} for your bug report on the ${bugInfo.application} application!
+We hope to resolve your issue as soon as we can.`);
+    this.bugInfoForm.reset();
   }
 }

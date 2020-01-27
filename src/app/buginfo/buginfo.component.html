@@ -1,6 +1,9 @@
-<form class="buginfo-form" [formGroup]="bugInfoForm" (ngSubmit)="submit()">
+<form class="buginfo-form" [formGroup]="bugInfoForm" (ngSubmit)="submit(bugInfoForm.value)">
   <mat-form-field>
     <input matInput id="name" type="text" formControlName="name" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput id="email" type="text" formControlName="email" placeholder="Email">
   </mat-form-field>
   <mat-form-field>
     <input matInput id="summary" type="text" formControlName="summary" placeholder="Summary">
