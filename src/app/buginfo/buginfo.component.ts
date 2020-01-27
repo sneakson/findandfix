@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { BugInfo } from './buginfo.model';
 import { BugInfoFormGroup } from './buginfo.form';
 
 @Component({
   selector: 'app-buginfo',
   templateUrl: './buginfo.component.html',
-  styleUrls: ['./buginfo.component.css']
+  styleUrls: ['./buginfo.component.css'],
+  host: {
+    class: 'app-buginfo'
+  }
 })
 export class BuginfoComponent implements OnInit {
 
   private bugInfoForm: FormGroup;
 
-  constructor(private formGroup: BugInfoFormGroup) {
+  constructor(
+    private formGroup: BugInfoFormGroup) {
     this.bugInfoForm = formGroup.getFormGroup();
   }
 

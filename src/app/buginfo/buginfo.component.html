@@ -1,25 +1,42 @@
-<form class="buginfo-form" [formGroup]="bugInfoForm" (ngSubmit)="submit(bugInfoForm.value)">
-  <mat-form-field>
-    <input matInput id="name" type="text" formControlName="name" placeholder="Name" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput id="email" type="text" formControlName="email" placeholder="Email" required>
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput id="summary" type="text" formControlName="summary" placeholder="Summary" required>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-select id="application" type="text" formControlName="application" placeholder="Application" required>
-      <mat-option value="chat">Chat</mat-option>
-      <mat-option value="video">Video</mat-option>
-      <mat-option value="office">Office</mat-option>
-      <mat-option value="drive">Drive</mat-option>
-      <mat-option value="bug">Bug</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <textarea matInput id="description" type="text" formControlName="description" placeholder="Description" required></textarea>
-  </mat-form-field>
-  <button mat-flat-button type="submit" [disabled]="bugInfoForm.invalid">Submit Report</button>
-</form>
+<mat-card>
 
+  <mat-card-header>
+    <mat-card-title>Something broken?</mat-card-title>
+    <mat-card-subtitle>We've got you covered</mat-card-subtitle>
+  </mat-card-header>
+
+  <form [formGroup]="bugInfoForm" (ngSubmit)="submit(bugInfoForm.value)">
+    <mat-card-content class="buginfo-form">
+
+      <mat-form-field>
+        <input matInput id="name" type="text" formControlName="name" placeholder="Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="email" type="text" formControlName="email" placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput id="summary" type="text" formControlName="summary" placeholder="Summary">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select id="application" type="text" formControlName="application" placeholder="Application">
+          <mat-option value="chat">Chat</mat-option>
+          <mat-option value="video">Video</mat-option>
+          <mat-option value="office">Office</mat-option>
+          <mat-option value="drive">Drive</mat-option>
+          <mat-option value="bug">Bug</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput id="description" type="text" formControlName="description"
+          placeholder="Description"></textarea>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button type="submit" color="primary" [disabled]="bugInfoForm.invalid">REPORT</button>
+    </mat-card-actions>
+
+  </form>
+
+</mat-card>

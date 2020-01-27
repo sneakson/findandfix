@@ -6,3 +6,7 @@
 .buginfo-form > * {
   width: 100%;
 }
+
+.app-buginfo {
+  width: 50%
+}
