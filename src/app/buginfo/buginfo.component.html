@@ -1,0 +1,19 @@
+<form [formGroup]="bugInfoForm" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+  <div>
+    <label for="summary">Summary</label>
+    <input id="summary" type="text" formControlName="summary">
+  </div>
+  <div>
+    <label for="application">Application</label>
+    <input id="application" type="text" formControlName="application">
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <input id="description" type="text" formControlName="description">
+  </div>
+  <button type="submit">Submit Report</button>
+</form>
