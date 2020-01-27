@@ -1,0 +1,8 @@
+.buginfo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.buginfo-form > * {
+  width: 100%;
+}
