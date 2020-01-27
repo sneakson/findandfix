@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatSelectModule} from '@angular/material';
 import { MatOptionModule} from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 import { BugInfoFormGroup } from './buginfo/buginfo.form';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BugInfoFormGroup } from './buginfo/buginfo.form';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatToolbarModule
   ],
   providers: [
     BugInfoFormGroup
