@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { BugInfo } from './buginfo.model';
+import { BugInfoFormGroup } from './buginfo.form';
 
 @Component({
   selector: 'app-buginfo',
@@ -10,20 +12,14 @@ export class BuginfoComponent implements OnInit {
 
   private bugInfoForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.bugInfoForm = this.formBuilder.group({
-      name: '',
-      email: '',
-      summary: '',
-      application: '',
-      description: ''
-    });
+  constructor(private formGroup: BugInfoFormGroup) {
+    this.bugInfoForm = formGroup.getFormGroup();
   }
 
   ngOnInit() {
   }
 
-  submit(bugInfo: FormGroup) {
+  public submit(bugInfo: BugInfo) {
     console.log(bugInfo);
     window.alert(`Thank you ${bugInfo.name} for your bug report on the ${bugInfo.application} application!
 We hope to resolve your issue as soon as we can.`);

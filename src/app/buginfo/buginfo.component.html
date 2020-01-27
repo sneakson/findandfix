@@ -1,24 +1,25 @@
 <form class="buginfo-form" [formGroup]="bugInfoForm" (ngSubmit)="submit(bugInfoForm.value)">
   <mat-form-field>
-    <input matInput id="name" type="text" formControlName="name" placeholder="Name">
+    <input matInput id="name" type="text" formControlName="name" placeholder="Name" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput id="email" type="text" formControlName="email" placeholder="Email">
+    <input matInput id="email" type="text" formControlName="email" placeholder="Email" required>
   </mat-form-field>
   <mat-form-field>
-    <input matInput id="summary" type="text" formControlName="summary" placeholder="Summary">
+    <input matInput id="summary" type="text" formControlName="summary" placeholder="Summary" required>
   </mat-form-field>
   <mat-form-field>
-    <mat-select id="application" type="text" formControlName="application" placeholder="Application">
+    <mat-select id="application" type="text" formControlName="application" placeholder="Application" required>
       <mat-option value="chat">Chat</mat-option>
       <mat-option value="video">Video</mat-option>
       <mat-option value="office">Office</mat-option>
       <mat-option value="drive">Drive</mat-option>
+      <mat-option value="bug">Bug</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <textarea matInput id="description" type="text" formControlName="description" placeholder="Description"></textarea>
+    <textarea matInput id="description" type="text" formControlName="description" placeholder="Description" required></textarea>
   </mat-form-field>
-  <button mat-flat-button type="submit">Submit Report</button>
+  <button mat-flat-button type="submit" [disabled]="bugInfoForm.invalid">Submit Report</button>
 </form>
 

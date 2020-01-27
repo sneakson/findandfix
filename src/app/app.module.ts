@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatSelectModule} from '@angular/material';
 import { MatOptionModule} from '@angular/material';
+import { BugInfoFormGroup } from './buginfo/buginfo.form';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { MatOptionModule} from '@angular/material';
     MatSelectModule,
     MatOptionModule
   ],
-  providers: [],
+  providers: [
+    BugInfoFormGroup
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
