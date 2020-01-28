@@ -13,12 +13,15 @@ import { MatSelectModule} from '@angular/material';
 import { MatOptionModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material';
 import { BugInfoFormGroup } from './buginfo/buginfo.form';
+import { SubmissionComponent } from './submission/submission.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuginfoComponent
+    BuginfoComponent,
+    SubmissionComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { BugInfoFormGroup } from './buginfo/buginfo.form';
     MatSelectModule,
     MatOptionModule,
     MatToolbarModule,
+    MatDividerModule,
     MatCardModule
   ],
   providers: [
