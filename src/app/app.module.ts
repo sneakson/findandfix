@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BuginfoComponent } from './buginfo/buginfo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { MatSelectModule} from '@angular/material';
@@ -43,6 +43,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatToolbarModule,
     MatDividerModule,
     MatTableModule,
+    MatIconModule,
     MatCardModule
   ],
   providers: [
