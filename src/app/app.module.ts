@@ -14,20 +14,27 @@ import { MatOptionModule} from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material';
+import { MatTableModule } from '@angular/material';
+import { MatTableDataSource } from '@angular/material/table';
 import { BugInfoFormGroup } from './buginfo/buginfo.form';
 import { SubmissionComponent } from './submission/submission.component';
+import { BuglistComponent } from './buglist/buglist.component';
+import { BugListService } from './buglist/buglist.service';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     BuginfoComponent,
-    SubmissionComponent
+    SubmissionComponent,
+    BuglistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -35,10 +42,13 @@ import { SubmissionComponent } from './submission/submission.component';
     MatOptionModule,
     MatToolbarModule,
     MatDividerModule,
+    MatTableModule,
     MatCardModule
   ],
   providers: [
-    BugInfoFormGroup
+    BugInfoFormGroup,
+    BugListService,
+    MatTableDataSource
   ],
   bootstrap: [AppComponent]
 })

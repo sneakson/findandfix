@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { BugInfo } from './buginfo.model';
 import { BugInfoFormGroup } from './buginfo.form';
+import { BugListService } from '../buglist/buglist.service'
+import { BugReport } from '../buglist/bugreport.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buginfo',
@@ -16,7 +19,9 @@ export class BuginfoComponent implements OnInit {
   private bugInfoForm: FormGroup;
 
   constructor(
-    private formGroup: BugInfoFormGroup) {
+    private formGroup: BugInfoFormGroup,
+    private bugService: BugListService,
+    private router: Router ) {
     this.bugInfoForm = formGroup.getFormGroup();
   }
 
@@ -25,8 +30,8 @@ export class BuginfoComponent implements OnInit {
 
   public submit(bugInfo: BugInfo) {
     console.log(bugInfo);
-    window.alert(`Thank you ${bugInfo.name} for your bug report on the ${bugInfo.application} application!
-We hope to resolve your issue as soon as we can.`);
     this.bugInfoForm.reset();
+    this.bugService.create(new BugReport(bugInfo));
+    this.router.navigate(['thankyou']);
   }
 }

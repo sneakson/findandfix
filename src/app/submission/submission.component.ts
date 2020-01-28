@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-submission',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmissionComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
   ngOnInit() {
   }
 
+  encore(){
+    this.router.navigate(['report']);
+  }
+  
 }
