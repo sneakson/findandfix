@@ -17,7 +17,18 @@ export class BugListService {
     }
 
     public create(report: BugReport) {
+        //temp while no db, populate the id by hand
+        let largestId = Math.max(...this.reports.map( report => {
+          return report.id;
+        }));
+
+        largestId = largestId === -Infinity ? -1 : largestId;
+
+        report.id = largestId + 1;
+
+        //create
         this.reports.push(report);
+        console.log(this.reports);
     }
 
     public getBugReports(): BugReport[] {

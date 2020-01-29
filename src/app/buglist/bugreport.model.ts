@@ -2,13 +2,13 @@ import { BugInfo } from '../buginfo/buginfo.model';
 
 export class BugReport {
 
-    id: Number;
+    id: number;
     reporter: string = 'name';
     email: string = 'email';
     summary: string = 'summary';
     application: string = 'application';
     description: string = 'description';
-    status: string = 'NEW'
+    status: string = 'NEW';
 
     constructor(bugInfo: BugInfo){
         this.reporter = bugInfo.name;

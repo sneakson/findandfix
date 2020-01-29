@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{bugReport.application}} : {{bugReport.summary}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{bugReport.description}}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-chip>
+      {{bugReport.status}}
+    </mat-chip>
+    <div>
+      Reported by {{bugReport.reporter}} {{bugReport.email}}
+    </div>
+  </mat-card-content>
+</mat-card>

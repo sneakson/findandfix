@@ -19,8 +19,6 @@ export class BuglistComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("blc.ngOnInit");
-    console.log(this.bugReports);
     this.bugReports = this.bugService.getBugReports();
     this.dataSource = new MatTableDataSource(this.bugReports);
   }

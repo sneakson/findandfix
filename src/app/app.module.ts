@@ -16,18 +16,21 @@ import { MatCardModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material';
 import { MatTableModule } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatChipsModule } from '@angular/material';
 import { BugInfoFormGroup } from './buginfo/buginfo.form';
 import { SubmissionComponent } from './submission/submission.component';
 import { BuglistComponent } from './buglist/buglist.component';
 import { BugListService } from './buglist/buglist.service';
 import { HttpClientModule } from "@angular/common/http";
+import { BugDetailsComponent } from './bug-details/bug-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BuginfoComponent,
     SubmissionComponent,
-    BuglistComponent
+    BuglistComponent,
+    BugDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatDividerModule,
     MatTableModule,
     MatIconModule,
+    MatChipsModule,
     MatCardModule
   ],
   providers: [
