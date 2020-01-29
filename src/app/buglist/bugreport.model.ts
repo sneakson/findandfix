@@ -10,12 +10,14 @@ export class BugReport {
     description: string = 'description';
     status: string = 'NEW';
 
-    constructor(bugInfo: BugInfo){
-        this.reporter = bugInfo.name;
-        this.email = bugInfo.email;
-        this.summary = bugInfo.summary;
-        this.application = bugInfo.application;
-        this.description = bugInfo.description;
+    constructor(bugInfo?: BugInfo){
+        if(bugInfo){
+            this.reporter = bugInfo.name;
+            this.email = bugInfo.email;
+            this.summary = bugInfo.summary;
+            this.application = bugInfo.application;
+            this.description = bugInfo.description;
+        }
     }
 
 }

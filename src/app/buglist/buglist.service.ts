@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { BugReport } from './bugreport.model';
+import { BugReport, BugReport } from './bugreport.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class BugListService {
-    reports: BugReport[] = [];
+    private reports: BugReport[] = [];
 
     constructor( private httpClient: HttpClient ){
-
+        this._stubReports();
     }
 
     ngOnInit(){
@@ -34,6 +34,12 @@ export class BugListService {
     public getBugReports(): BugReport[] {
         //return this.httpClient.get('/assets/shipping.json');
         return this.reports;
+    }
+
+    private _stubReports() {
+        this.create(new BugReport());
+        this.create(new BugReport());
+        this.create(new BugReport());
     }
 
 }
